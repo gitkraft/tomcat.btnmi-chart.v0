@@ -11,7 +11,7 @@ $ helm install my-release bitnami/tomcat
 
 ## Introduction
 
-This chart bootstraps a [Tomcat](https://github.com/bitnami/bitnami-docker-tomcat) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [Tomcat](https://github.com/bitnami/bitnami-docker-tomcat) deployment on a [Kubernetes](https://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 Bitnami charts can be used with [Kubeapps](https://kubeapps.com/) for deployment and management of Helm Charts in clusters. This Helm chart has been tested on top of [Bitnami Kubernetes Production Runtime](https://kubeprod.io/) (BKPR). Deploy BKPR to get automated TLS certificates, logging and monitoring for your applications.
 
@@ -148,7 +148,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `persistence.size`                         | PVC Storage Request for Tomcat volume                                                                                    | `8Gi`               |
 | `persistence.existingClaim`                | An Existing PVC name for Tomcat volume                                                                                   | `""`                |
 | `persistence.selectorLabels`               | Selector labels to use in volume claim template in statefulset                                                           | `{}`                |
-| `networkPolicy.enabled`                    | Enable creation of NetworkPolicy resources.                                                                              | `false`             |
+| `networkPolicy.enabled`                    | Enable creation of NetworkPolicy resources. Only Ingress traffic is filtered for now.                                    | `false`             |
 | `networkPolicy.allowExternal`              | Don't require client label for connections                                                                               | `true`              |
 | `networkPolicy.explicitNamespacesSelector` | A Kubernetes LabelSelector to explicitly select namespaces from which traffic could be allowed                           | `{}`                |
 
@@ -216,7 +216,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `metrics.podMonitor.relabelings`      | Prometheus relabeling rules                                                        | `[]`                                                                                                                                                                                                                |
 
 
-The above parameters map to the env variables defined in [bitnami/tomcat](http://github.com/bitnami/bitnami-docker-tomcat). For more information please refer to the [bitnami/tomcat](http://github.com/bitnami/bitnami-docker-tomcat) image documentation.
+The above parameters map to the env variables defined in [bitnami/tomcat](https://github.com/bitnami/bitnami-docker-tomcat). For more information please refer to the [bitnami/tomcat](https://github.com/bitnami/bitnami-docker-tomcat) image documentation.
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
